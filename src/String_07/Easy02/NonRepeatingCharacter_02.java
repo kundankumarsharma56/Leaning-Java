@@ -23,6 +23,7 @@ public class NonRepeatingCharacter_02 {
             for (char character : characters) {
                 if (c == character) {
                     count++;
+                    c = character;
                 }
             }
             if (count == 1) {

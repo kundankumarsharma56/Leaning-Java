@@ -9,10 +9,11 @@ public class PalindromeString_01 {
         String str = sc.next();
 
         boolean re = ReverseStringToCheckPalindrome(str);
+
         if (re){
-            System.out.println("Reverse String is yes Palindrome: "+re);
+            System.out.println("Reverse String is yes Palindrome: "+ true);
         }else{
-            System.out.println("Reverse String is not Palindrome: "+re);
+            System.out.println("Reverse String is not Palindrome: "+ false);
         }
 
     }
