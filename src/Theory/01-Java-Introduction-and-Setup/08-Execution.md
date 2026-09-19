@@ -1,62 +1,72 @@
-# Execution
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Execution&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-The process of running compiled bytecode (`.class`) using the `java` launcher, which starts the JVM.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=What%20happens%20on%20java%20ClassName%3BBytecode%20%E2%9E%9C%20Machine%20code%3BRuntime%20errors%20live%20here" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Compilation alone doesn't produce output — the JVM must load and execute the bytecode to actually run your program.
+</div>
 
-## 3. Basic Syntax
+---
+
+> **In one line:** java ClassName starts a JVM, loads the bytecode and runs main.
+
+## 🧠 1. What Is It?
+
+Execution is the step where the **JVM** loads the `.class` file, converts bytecode into machine code and produces the result.
+
+## 🧩 2. Execution Diagram
+
+```mermaid
+sequenceDiagram
+    participant U as 👨‍💻 You
+    participant J as ⚙️ JVM
+    participant C as 📦 Demo.class
+    U->>J: java Demo
+    J->>C: load bytecode
+    J->>J: verify and prepare memory
+    J->>J: locate main(String[] args)
+    J->>J: convert bytecode ➜ machine code
+    J-->>U: ✅ output
+```
+
+## ⚙️ 3. How It Works
+
+- `java Demo` starts a fresh JVM process.
+- The class loader brings `Demo.class` into memory.
+- The execution engine (Interpreter + JIT) runs the instructions.
+- The JVM allocates memory at the start and de-allocates it when objects are no longer used.
+
+## 🧪 4. Simple Example
 
 ```bash
-java ClassName
+java Demo
 ```
 
-## 4. Simple Example
+## 📌 5. Important Rules
 
-```bash
-$ java HelloWorld
-Hello, World!
-```
+- Use the **class name only**, with no `.class` extension.
+- `main` must be `public static void main(String[] args)` or the JVM cannot start.
+- Errors that appear here are **runtime errors**, not compile-time errors.
 
-## 5. How It Works
+## ⚠️ 6. Common Mistakes
 
-The `java` command starts a new JVM instance, which loads the specified class, locates its `main` method, and begins executing bytecode from there.
+- Typing `java Demo.class`.
+- Case mismatch — `java demo` will not find `Demo.class`.
 
-## 6. Internal Working
+## 🔁 7. Quick Revision
 
-The JVM's Class Loader Subsystem loads the class, the bytecode verifier checks safety, Runtime Data Areas are allocated, and the Execution Engine (interpreter + JIT) begins running instructions.
+> `java ClassName` ➜ JVM loads bytecode ➜ runs `main` ➜ output.
 
-## 7. Visualization
+---
 
-```
-java ClassName
-   |
-   v
-JVM starts -> Class Loader -> Verify -> Runtime Areas -> Execution Engine -> Output -> JVM exits
-```
+<div align="center">
 
-## 8. Important Rules
+<a href="07-Compilation.md">⬅️ Compilation</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="09-Translators.md">Translators ➡️</a>
 
-- The class passed to `java` must contain `public static void main(String[] args)`.
-- Execution ends when `main` returns (or `System.exit()` is called, or an uncaught exception propagates).
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
 
-## 9. Common Mistakes
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
 
-- Running `java ClassName.class` instead of `java ClassName` (no extension needed).
-- Forgetting that `main` must be `public static void`.
-
-## 10. Best Practices
-
-- Handle exceptions gracefully instead of letting the JVM print a raw stack trace to users.
-- Use exit codes meaningfully in real applications (`System.exit(code)`).
-
-## 11. Interview Points
-
-- Explain what happens between typing `java ClassName` and seeing output — this is a very common interview question.
-
-## 12. Quick Revision
-
-Execution = `java ClassName` -> JVM starts -> loads/verifies class -> runs bytecode from `main` -> produces output.
+</div>

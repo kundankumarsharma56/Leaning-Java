@@ -1,62 +1,94 @@
-# Identifiers & Rules
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Identifiers%20and%20Rules&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-An identifier is the name given to a variable, method, class, package, or other program element.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=Naming%20things%20in%20Java%3B5%20identifier%20rules%3BValid%20vs%20Invalid%20names" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Identifiers let us refer to program elements meaningfully instead of by memory address.
+</div>
 
-## 3. Basic Syntax
+---
+
+> **In one line:** An identifier is any name you create — and it must obey five strict rules.
+
+## 🧠 1. What Is It?
+
+Every Java component needs a name. Names used for **classes, methods, interfaces and variables** are called **identifiers**.
+
+## 🧩 2. Rule Checklist
+
+```mermaid
+flowchart TD
+    N["✍️ Proposed name"] --> R1{"Only a-z A-Z 0-9 $ _ ?"}
+    R1 -->|no| X["❌ Invalid"]
+    R1 -->|yes| R2{"Does not start with a digit?"}
+    R2 -->|no| X
+    R2 -->|yes| R3{"Not a reserved word?"}
+    R3 -->|no| X
+    R3 -->|yes| R4{"No spaces?"}
+    R4 -->|no| X
+    R4 -->|yes| OK["✅ Valid identifier"]
+    style OK fill:#c8e6c9
+    style X fill:#ffcdd2
+```
+
+## 📋 3. The Five Rules
+
+| Rule | Description |
+|---|---|
+| **Rule 1** | Allowed characters only: `a-z`, `A-Z`, `0-9`, `$`, `_` |
+| **Rule 2** | Must not start with a digit |
+| **Rule 3** | Reserved keywords cannot be used (53 reserved words exist) |
+| **Rule 4** | Spaces are not allowed |
+| **Rule 5** | Identifiers are **case sensitive** — `foo` and `Foo` are different |
+
+## ✅ 4. Valid vs ❌ Invalid
+
+| Name | Verdict | Reason |
+|---|---|---|
+| `name` | ✅ valid | letters only |
+| `name@` | ❌ invalid | `@` is not allowed |
+| `age#` | ❌ invalid | `#` is not allowed |
+| `1age` | ❌ invalid | starts with a digit |
+| `age2` | ✅ valid | digit is not first |
+| `_name` | ✅ valid | underscore allowed |
+| `$name` | ✅ valid | dollar allowed |
+| `$_amt` | ✅ valid | both symbols allowed |
+| `int byte = 20;` | ❌ invalid | `byte` is a reserved word |
+| `int try = 30;` | ❌ invalid | `try` is a reserved word |
+| `int mobile bill;` | ❌ invalid | space not allowed |
+| `int mobile_bill;` | ✅ valid | underscore instead of space |
+
+## 🧪 5. Simple Example
 
 ```java
-int totalMarks;      // valid
-class StudentRecord {} // valid
+public class IdentifierDemo {
+    public static void main(String[] args) {
+        int mobile_bill = 400;   // valid
+        long phno = 797979799L;  // valid
+        System.out.println(mobile_bill + " " + phno);
+    }
+}
 ```
 
-## 4. Simple Example
+## ⚠️ 6. Common Mistakes
 
-Valid: `age`, `_count`, `$price`, `studentName2`
-Invalid: `2ndPlace` (starts with digit), `class` (reserved word), `first-name` (hyphen not allowed)
+- Using `@` or `#` inside names, copied from other languages.
+- Assuming `Total` and `total` refer to the same variable.
 
-## 5. How It Works
+## 🔁 7. Quick Revision
 
-The compiler's lexer checks each identifier against Java's naming rules during tokenization; violations cause compile-time syntax errors.
+> Letters, digits, `$`, `_` only ➜ never start with a digit ➜ never a keyword ➜ never a space ➜ case matters.
 
-## 6. Internal Working
+---
 
-Identifiers may contain Unicode letters, digits, `_`, and `$`, but cannot start with a digit and cannot exactly match a reserved keyword.
+<div align="center">
 
-## 7. Visualization
+<a href="02-Data-Types.md">⬅️ Data Types</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="04-Reserved-Words.md">Reserved Words ➡️</a>
 
-```
-Valid Identifier Characters: [A-Z a-z 0-9 _ $ (and Unicode letters)]
-First Character: cannot be a digit
-```
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
 
-## 8. Important Rules
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
 
-- Cannot start with a digit.
-- Cannot be a reserved keyword (`class`, `int`, `if`, etc.).
-- Case-sensitive (`age` and `Age` are different identifiers).
-- Can contain letters, digits, underscore `_`, and dollar sign `$`.
-
-## 9. Common Mistakes
-
-- Using hyphens or spaces in names (not allowed in Java, unlike some other contexts).
-- Naming a variable the same as a reserved word.
-
-## 10. Best Practices
-
-- Use descriptive names (`totalPrice`, not `tp`).
-- Follow conventional casing (see Coding Standards) rather than just "anything legal".
-
-## 11. Interview Points
-
-- List the 4 core identifier rules from memory.
-- Explain that `$` and `_` are legal but discouraged for regular identifiers (often reserved for generated/special code).
-
-## 12. Quick Revision
-
-Identifiers: letters/digits/`_`/`$`, cannot start with digit, cannot be a keyword, case-sensitive.
+</div>

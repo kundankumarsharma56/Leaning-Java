@@ -1,60 +1,76 @@
-# Compilation
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Compilation&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-The process of translating human-readable Java source code (`.java`) into platform-independent bytecode (`.class`) using the `javac` compiler.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=What%20javac%20really%20does%3BSource%20code%20%E2%9E%9C%20Bytecode%3BSyntax%20errors%20stop%20here" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-The JVM cannot execute raw Java text; it executes bytecode. Compilation bridges that gap while also catching syntax and type errors early.
+</div>
 
-## 3. Basic Syntax
+---
+
+> **In one line:** javac checks syntax and converts source code into platform independent bytecode.
+
+## 🧠 1. What Is It?
+
+Compilation is the step where the **java compiler (`javac`)** converts human readable source code into bytecode.
+
+## 🧩 2. Compilation Diagram
+
+```mermaid
+flowchart LR
+    A["📄 Demo.java"] --> B{"🔧 javac"}
+    B -->|syntax correct| C["📦 Demo.class<br/>bytecode"]
+    B -->|syntax error| D["❌ Compile-time error<br/>no .class produced"]
+    style C fill:#c8e6c9
+    style D fill:#ffcdd2
+```
+
+## ⚙️ 3. How It Works
+
+1. `javac` reads the `.java` file.
+2. It checks syntax, types and naming rules.
+3. If everything is valid it writes one `.class` file per class.
+4. That bytecode is **platform independent** — it belongs to no CPU.
+
+## 🧪 4. Simple Example
 
 ```bash
-javac FileName.java
+javac Demo.java
 ```
 
-## 4. Simple Example
-
-```bash
-$ javac HelloWorld.java
-$ ls
-HelloWorld.class  HelloWorld.java
+```java
+public class Demo {
+    public static void main(String[] args) {
+        System.out.println("Compiled successfully");
+    }
+}
 ```
 
-## 5. How It Works
+## 📌 5. Important Rules
 
-`javac` performs lexical analysis, parsing, semantic/type checking, and then generates bytecode instructions stored in a `.class` file, one per top-level/nested class.
+- `javac` needs the full file name with the `.java` extension.
+- Errors reported at this stage are called **compile-time errors**.
+- No `.class` file means the program never reaches the JVM.
 
-## 6. Internal Working
+## ⚠️ 6. Common Mistakes
 
-Compilation happens in stages: tokenizing -> parsing into an AST -> semantic analysis (type checking, resolving symbols) -> bytecode generation. Errors at any stage stop compilation before a `.class` file is produced.
+- Missing semicolons, unmatched braces, or a misspelled class name.
+- Assuming a compiled program is correct — compilation checks **syntax**, not **logic**.
 
-## 7. Visualization
+## 🔁 7. Quick Revision
 
-```
-HelloWorld.java --(javac)--> HelloWorld.class
-```
+> `javac FileName.java` ➜ bytecode `.class`. Compile-time errors live here.
 
-## 8. Important Rules
+---
 
-- A `.class` file is produced only when compilation is fully successful.
-- One `.class` file is generated per class, including nested/inner classes.
+<div align="center">
 
-## 9. Common Mistakes
+<a href="06-Java-Program-Development.md">⬅️ Java Program Development</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="08-Execution.md">Execution ➡️</a>
 
-- Assuming a `.class` file exists after a failed compilation.
-- Confusing compiler errors (syntax/type issues, caught at compile time) with runtime errors.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
 
-## 10. Best Practices
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
 
-- Read compiler error messages top to bottom; the first error often causes cascading ones.
-- Compile often, in small steps.
-
-## 11. Interview Points
-
-- **Common Misconception:** "javac produces machine code" — false; it produces bytecode, which is further processed by the JVM.
-
-## 12. Quick Revision
-
-Compilation = `.java` -> `javac` -> `.class` (bytecode), independent of any specific machine.
+</div>

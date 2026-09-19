@@ -29,7 +29,6 @@ public class Anonymous_Thread {
 
 
         // This is Callable Thread as Anonymous Thread
-
         Callable callable = new Callable() {
             @Override
             public Object call() throws Exception {

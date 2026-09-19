@@ -1,60 +1,73 @@
-# Translators (Compiler, Interpreter, JIT)
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Translators&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-Programs that convert code from one form to another so it can be executed. Java uses a **compiler**, an **interpreter**, and a **JIT (Just-In-Time) compiler** together.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=Interpreter%20vs%20Compiler%3BLine%20by%20line%20or%20all%20at%20once%3BWhere%20the%20assembler%20fits" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Source code is human-readable but not directly executable by hardware; translators bridge that gap, and Java's specific combination balances portability with performance.
+</div>
 
-## 3. Basic Syntax
+---
 
-Not applicable — conceptual topic.
+> **In one line:** Interpreter, compiler and assembler each convert code from one format to another.
 
-## 4. Simple Example
+## 🧠 1. What Is It?
 
-`javac` (compiler) turns `.java` into `.class`; at runtime the JVM interprets bytecode and JIT-compiles hot methods to native code.
+A translator converts a program from one format into another format.
 
-## 5. How It Works
+## 🧩 2. Types Of Translators
 
-1. **Compiler (`javac`)**: source -> bytecode (once).
-2. **Interpreter**: reads bytecode and executes it instruction by instruction at runtime.
-3. **JIT Compiler**: identifies frequently executed ("hot") bytecode and compiles it directly to native machine code for that specific CPU, caching the result for reuse.
-
-## 6. Internal Working
-
-The JVM starts by interpreting bytecode for fast startup, then profiles execution; hot spots get compiled by the JIT (hence "HotSpot JVM") so repeated execution becomes near-native speed without sacrificing portability of the original bytecode.
-
-## 7. Visualization
-
-```
-Source (.java)
-   | compiler (javac)
-   v
-Bytecode (.class)
-   | interpreter (fast start) + JIT (hot-path speed)
-   v
-Native machine instructions (at runtime)
+```mermaid
+flowchart TD
+    T["🔄 Translators"] --> I["🐢 Interpreter<br/>line by line<br/><i>slower</i>"]
+    T --> C["🚀 Compiler<br/>all lines at once<br/><i>faster</i>"]
+    T --> A["🔩 Assembler<br/>assembly ➜ machine language"]
+    style T fill:#203a43,color:#fff
+    style I fill:#fff3e0
+    style C fill:#e8f5e9
+    style A fill:#e3f2fd
 ```
 
-## 8. Important Rules
+## 📋 3. Comparison
 
-- Compilation (`javac`) happens once, ahead of time.
-- Interpretation and JIT compilation happen at runtime, inside the JVM.
+| | Interpreter | Compiler | Assembler |
+|---|---|---|---|
+| Converts | One line at a time | The whole program at once | Assembly language |
+| Speed | Slow | Fast | — |
+| Error reporting | Stops at the first bad line | Reports all errors together | — |
+| Output | No separate file | Separate output file | Machine language |
 
-## 9. Common Mistakes
+## ⚙️ 4. Where Java Uses Both
 
-- Saying Java is "only interpreted" or "only compiled" — it is a hybrid model using all three translator types.
+```mermaid
+flowchart LR
+    S["Source .java"] -->|Compiler: javac| B["Bytecode .class"]
+    B -->|Interpreter inside JVM| M["Machine code"]
+    B -->|JIT compiler for hot code| M
+    style B fill:#fff3e0
+```
 
-## 10. Best Practices
+Java is **compiled and interpreted** — `javac` compiles, and the JVM interprets while the JIT compiles the frequently used parts.
 
-- Understand that JIT warm-up means the first few executions of a method may be slower than later ones.
+## ⚠️ 5. Common Mistakes
 
-## 11. Interview Points
+- Calling Java "purely compiled" or "purely interpreted"; it is a hybrid.
+- Mixing up the JIT (bytecode ➜ native) with `javac` (source ➜ bytecode).
 
-- **Common Misconception:** "Java is purely interpreted" — incorrect. Java compiles to bytecode ahead of time, then the JVM interprets and/or JIT-compiles it at runtime.
+## 🔁 6. Quick Revision
 
-## 12. Quick Revision
+> Interpreter = line by line. Compiler = whole program. Assembler = assembly ➜ machine.
+> Java uses a **compiler + interpreter + JIT** model.
 
-Compiler (source -> bytecode, once) + Interpreter (bytecode -> execution, per run) + JIT (hot bytecode -> native code, per run) = Java's translation pipeline.
+---
+
+<div align="center">
+
+<a href="08-Execution.md">⬅️ Execution</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="10-JVM-Architecture.md">JVM Architecture ➡️</a>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
+
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
+
+</div>

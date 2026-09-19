@@ -1,87 +1,106 @@
-# Data Types
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Data%20Types&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-A classification that specifies what kind of value a variable can hold and how much memory it occupies.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=Primitive%20vs%20Non-Primitive%3B8%20primitive%20types%3BSize%20%E2%80%A2%20Range%20%E2%80%A2%20Default" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Data types let the compiler allocate the right amount of memory and catch type-mismatch errors before the program runs.
+</div>
 
-## 3. Basic Syntax
+---
+
+> **In one line:** Eight primitive types plus non-primitive (reference) types decide size, range and default value.
+
+## 🧠 1. What Is It?
+
+Data types specify the **type of data** a variable can hold.
+
+## 🧩 2. Data Type Tree
+
+```mermaid
+flowchart TD
+    DT["🗂️ Java Data Types"] --> PR["Primitive"]
+    DT --> NP["Non-Primitive<br/>(Reference)"]
+    PR --> IG["Integer<br/>byte • short • int • long"]
+    PR --> FG["Floating<br/>float • double"]
+    PR --> CG["Character<br/>char"]
+    PR --> BG["Boolean<br/>boolean"]
+    NP --> S["String"]
+    NP --> AR["Array"]
+    NP --> CL["Class / Interface"]
+    style DT fill:#203a43,color:#fff
+    style PR fill:#e8f5e9
+    style NP fill:#fff3e0
+```
+
+## 📋 3. The Eight Primitive Types
+
+| Type | Size | Range | Default |
+|---|---|---|---|
+| `byte` | 1 byte | -128 to 127 | `0` |
+| `short` | 2 bytes | -32,768 to 32,767 | `0` |
+| `int` | 4 bytes | -2,147,483,648 to 2,147,483,647 | `0` |
+| `long` | 8 bytes | -2^63 to 2^63-1 | `0L` |
+| `float` | 4 bytes | approx ±3.4e38 (7 digits) | `0.0f` |
+| `double` | 8 bytes | approx ±1.7e308 (15 digits) | `0.0d` |
+| `char` | 2 bytes | 0 to 65,535 (Unicode) | `'\u0000'` |
+| `boolean` | 1 bit | `true` / `false` | `false` |
+
+> 📎 **Note:** 8 bits = 1 byte.
+
+## 🔤 4. char And boolean
+
+- `char` stores a **single** character — alphabet, digit or special character — and **single quotes are mandatory**.
+- `boolean` stores only `true` or `false`, and its default value is `false`.
+
+## 🧵 5. String As A Data Type
+
+`String` is a predefined class in the `java.lang` package used to store a **group of characters**. Every Java class can be used as a data type, which is why these are called **reference** data types. **Double quotes are mandatory** for String values.
 
 ```java
-byte b = 10;
-int i = 1000;
-double d = 3.14;
-char c = 'A';
-boolean flag = true;
-String s = "text"; // reference type
+String name = "Kundan";
+String email = "kundan@gmail.com";
+String country = "India";
 ```
 
-## 4. Simple Example
+## 🧪 6. Simple Example
 
 ```java
-int score = 95;
-double average = 88.5;
-char grade = 'A';
-boolean passed = true;
+public class DataTypeDemo {
+    public static void main(String[] args) {
+        int marks = 95;
+        double percentage = 87.5;
+        char section = 'B';
+        boolean passed = true;
+        System.out.println(marks + " " + percentage + " " + section + " " + passed);
+    }
+}
 ```
 
-## 5. How It Works
+## 📌 7. Important Rules
 
-Primitive types store actual values directly. Reference types store a reference (pointer) to an object located on the heap.
+- Once a primitive type is declared, its **type** can never change, although its value usually can.
+- `long` values end with `L`, `float` values end with `f`.
+- `char` uses single quotes; `String` uses double quotes.
 
-## 6. Internal Working
+## ⚠️ 8. Common Mistakes
 
-```
-Java Data Types
-├── Primitive (value stored directly)
-│   ├── byte, short, int, long   (integer)
-│   ├── float, double             (floating-point)
-│   ├── char                       (single 16-bit Unicode character)
-│   └── boolean                    (true/false)
-└── Reference (stores address of object on heap)
-    ├── Class
-    ├── Interface
-    ├── Array
-    └── Enum
-```
+- Writing `char c = "A";` with double quotes.
+- Expecting `float f = 10.5;` to compile — the literal is a `double`, so write `10.5f`.
 
-## 7. Visualization
+## 🔁 9. Quick Revision
 
-| Type | Size | Range | Default | Example |
-|---|---|---|---|---|
-| byte | 8 bits | -128 to 127 | 0 | `byte b = 10;` |
-| short | 16 bits | -32,768 to 32,767 | 0 | `short s = 200;` |
-| int | 32 bits | ~-2.1B to 2.1B | 0 | `int i = 1000;` |
-| long | 64 bits | ~-9.2×10^18 to 9.2×10^18 | 0L | `long l = 100000L;` |
-| float | 32 bits | ~±3.4×10^38 (7 digit precision) | 0.0f | `float f = 1.5f;` |
-| double | 64 bits | ~±1.7×10^308 (15 digit precision) | 0.0d | `double d = 1.5;` |
-| char | 16 bits | 0 to 65,535 (single Unicode char) | '\u0000' | `char c = 'A';` |
-| boolean | JVM-dependent (not precisely specified) | true / false | false | `boolean b = true;` |
+> 8 primitives grouped as **integer, floating, character, boolean**. Everything else is a reference type.
 
-## 8. Important Rules
+---
 
-- `boolean` has no defined bit size in the JVM spec — it's conceptually 1 bit but JVM-dependent in practice.
-- `char` is unsigned and represents a UTF-16 code unit, not a byte.
-- Reference type default value is always `null`.
+<div align="center">
 
-## 9. Common Mistakes
+<a href="01-Variables.md">⬅️ Variables</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="03-Identifiers-and-Rules.md">Identifiers and Rules ➡️</a>
 
-- Assuming `char` is 8 bits like in C — it's 16 bits in Java.
-- Using `float`/`double` for exact decimal math (e.g. currency) — leads to rounding errors; use `BigDecimal` instead.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
 
-## 10. Best Practices
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
 
-- Use `int` by default for whole numbers unless you specifically need a smaller/larger range.
-- Use `double` by default for decimals; only use `float` when memory is critical and precision loss is acceptable.
-
-## 11. Interview Points
-
-- **Common Misconception:** "`char` is 8 bits" — false, it's 16 bits (UTF-16).
-- Know default values by heart — they matter for instance/static variables.
-
-## 12. Quick Revision
-
-8 primitives = 4 integer (byte, short, int, long) + 2 floating-point (float, double) + char + boolean. Everything else (String, arrays, classes) is a reference type.
+</div>

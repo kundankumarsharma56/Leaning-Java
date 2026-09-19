@@ -1,23 +1,89 @@
-# Looping Statements
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Looping%20Statements&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-Statements that repeat a block of code while a condition holds true.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=for%20%E2%80%A2%20while%20%E2%80%A2%20do-while%3BEntry%20vs%20Exit%20control%3BNested%20and%20for-each%20loops" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Loops avoid duplicating code for repetitive tasks (processing collections, counting, retrying, etc.).
+</div>
 
-## 3. Basic Syntax
+---
 
-```java
-for (init; condition; update) { }
-while (condition) { }
-do { } while (condition);
-for (Type item : collection) { } // enhanced for
+> **In one line:** for, while, do-while and for-each repeat a block while a condition stays true.
+
+## 🧠 1. What Is It?
+
+A loop repeats a block of statements until the condition becomes false, or until every element of a collection has been visited. Instead of writing one print statement ten times, a loop does it once.
+
+## 🧩 2. Loop Family
+
+```mermaid
+flowchart TD
+    L["🔁 Loops"] --> F["for<br/><i>known count</i>"]
+    L --> W["while<br/><i>entry control</i>"]
+    L --> D["do-while<br/><i>exit control</i>"]
+    L --> E["for-each<br/><i>arrays / collections</i>"]
+    style L fill:#203a43,color:#fff
 ```
 
-## 4. Simple Example
+## 1️⃣ 3. while — Entry Control
+
+The condition is checked **before** the body runs, so the body may run **zero** times.
+
+```mermaid
+flowchart TD
+    S["Start"] --> C{"condition?"}
+    C -->|true| B["body"] --> U["update"] --> C
+    C -->|false| X["Exit"]
+    style X fill:#ffcdd2
+```
+
+```java
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    i++;
+}
+```
+
+## 2️⃣ 4. do-while — Exit Control
+
+The body runs **first**, then the condition is checked, so the body always runs **at least once**.
+
+```mermaid
+flowchart TD
+    S["Start"] --> B["body"] --> C{"condition?"}
+    C -->|true| B
+    C -->|false| X["Exit"]
+    style B fill:#e8f5e9
+```
+
+```java
+int i = 1;
+do {
+    System.out.println(i);
+    i++;
+} while (i <= 5);
+```
+
+## 3️⃣ 5. for Loop
+
+A `for` loop needs four parts:
+
+| Part | Purpose | Optional? |
+|---|---|---|
+| **Initialization** | Sets the starting value, runs only once | Yes |
+| **Condition** | Checked every pass; loop continues while true | Yes — omitting it makes the loop infinite |
+| **Statement** | The loop body | — |
+| **Increment / Decrement** | Moves the counter forward or backward | Yes |
+
+```mermaid
+flowchart LR
+    I["1️⃣ init<br/>int i = 1"] --> C{"2️⃣ condition<br/>i <= 5"}
+    C -->|true| B["3️⃣ body"] --> U["4️⃣ i++"] --> C
+    C -->|false| X["Exit"]
+```
 
 ```java
 for (int i = 1; i <= 5; i++) {
@@ -25,54 +91,62 @@ for (int i = 1; i <= 5; i++) {
 }
 ```
 
-## 5. How It Works
+## 4️⃣ 6. Nested for Loop
 
-`for`: initialize once, check condition, run body, run update, repeat. `while`: check condition first, run body if true, repeat. `do-while`: run body first, then check condition (always runs at least once).
+Writing a loop inside another loop.
 
-## 6. Internal Working
-
-All loop forms compile to the same underlying bytecode pattern: a condition check plus a conditional jump back to the top of the loop body. The enhanced `for` loop is syntactic sugar — over arrays it becomes an index-based loop, and over `Iterable` it uses an `Iterator` internally (`hasNext()`/`next()`).
-
-## 7. Visualization
-
-```
-Initialization
-      |
-      v
-  Condition? --No--> Exit Loop
-      |Yes
-      v
-   Loop Body
-      |
-      v
-    Update
-      |
-      └──> (back to Condition)
+```java
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 3; j++) {
+        System.out.print(j + " ");
+    }
+    System.out.println();
+}
 ```
 
-## 8. Important Rules
+## 5️⃣ 7. for-each (Enhanced for)
 
-- `do-while` always executes its body at least once, even if the condition is initially false.
-- Enhanced `for` cannot modify the underlying collection's size safely (risk of `ConcurrentModificationException`) and doesn't expose the index directly.
-- An infinite loop (`for(;;)` or `while(true)`) needs an internal `break`/`return` to terminate.
+Introduced in Java 5.0, it walks through every element of an array or collection without an index.
 
-## 9. Common Mistakes
+```java
+int[] numbers = {10, 20, 30};
+for (int n : numbers) {
+    System.out.println(n);
+}
+```
 
-- Off-by-one errors (`<=` vs `<` in the condition).
-- Modifying the loop variable inside the body in confusing ways, making the iteration count hard to reason about.
-- Creating unintentional infinite loops by forgetting the update step.
+## 📋 8. while vs do-while vs for
 
-## 10. Best Practices
+| | while | do-while | for |
+|---|---|---|---|
+| Condition checked | Before the body | After the body | Before the body |
+| Minimum runs | 0 | 1 | 0 |
+| Control type | Entry | Exit | Entry |
+| Best for | Unknown count | Run at least once | Known count |
 
-- Use enhanced `for` when you just need each element and don't need the index.
-- Use classic `for` when you need the index or fine control over the step.
-- Use `while`/`do-while` when the number of iterations isn't known ahead of time.
+## ⚠️ 9. Common Mistakes
 
-## 11. Interview Points
+- Forgetting the increment, which creates an infinite loop.
+- Putting a semicolon after `for (...)` or `while (...)`.
+- Off-by-one errors: `i <= n` versus `i < n`.
 
-- Explain exactly when to choose `for` vs `while` vs `do-while` vs enhanced `for`.
-- **Common Misconception:** "`while` and `do-while` always behave the same" — false; `do-while` guarantees at least one execution.
+## ✅ 10. Best Practices
 
-## 12. Quick Revision
+- Keep the loop variable scoped inside the `for` header.
+- Use for-each when the index is not needed.
 
-for = known iteration count/index. while = condition-first, may run 0 times. do-while = body-first, runs >=1 time. enhanced-for = simplified iteration over arrays/collections.
+## 🔁 11. Quick Revision
+
+> `while` = entry control, `do-while` = exit control (runs at least once), `for` = counted loop, for-each = element walk.
+
+---
+
+<div align="center">
+
+<a href="03-Conditional-Statements.md">⬅️ Conditional Statements</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="05-Transfer-Statements.md">Transfer Statements ➡️</a>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
+
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
+
+</div>

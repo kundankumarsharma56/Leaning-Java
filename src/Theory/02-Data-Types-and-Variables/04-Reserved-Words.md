@@ -1,62 +1,83 @@
-# Reserved Words (Keywords)
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Reserved%20Words&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-Words that have special meaning in the Java language and cannot be used as identifiers.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=53%20reserved%20words%3BKeywords%20%E2%80%A2%20Literals%20%E2%80%A2%20Unused%3BWhy%20they%20matter" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Keywords give the compiler unambiguous syntax markers for language constructs (loops, types, modifiers, etc.).
+</div>
 
-## 3. Basic Syntax
+---
 
-Not applicable — keywords are fixed tokens defined by the language.
+> **In one line:** Java's 53 keywords are permanently reserved and can never be used as identifiers.
 
-## 4. Simple Example
+## 🧠 1. What Is It?
 
-`public`, `class`, `static`, `void`, `if`, `for`, `int` are all reserved words used in ordinary programs.
+Reserved words are names already claimed by the language. Java has **53** of them.
 
-## 5. How It Works
+## 🧩 2. Classification
 
-The compiler's lexer recognizes these exact tokens and treats them as language syntax rather than allowing them as identifiers.
+```mermaid
+flowchart TD
+    R["🔒 53 Reserved Words"] --> K["50 Keywords"]
+    R --> L["3 Reserved Literals<br/>true • false • null"]
+    K --> U["2 Unused Keywords<br/>goto • const"]
+    style R fill:#203a43,color:#fff
+    style L fill:#fff3e0
+    style U fill:#ffcdd2
+```
 
-## 6. Internal Working
+## 📋 3. Grouped By Purpose
 
-| Category | Examples |
+| Group | Words |
 |---|---|
-| Data Types | `byte`, `short`, `int`, `long`, `float`, `double`, `char`, `boolean` |
-| Control Flow | `if`, `else`, `switch`, `case`, `default`, `for`, `while`, `do`, `break`, `continue`, `return` |
-| Access/Modifiers | `public`, `private`, `protected`, `static`, `final`, `abstract`, `synchronized`, `volatile`, `transient` |
-| Class/Object | `class`, `interface`, `extends`, `implements`, `new`, `this`, `super`, `instanceof` |
-| Exceptions | `try`, `catch`, `finally`, `throw`, `throws` |
-| Packages | `package`, `import` |
-| Other | `void`, `enum`, `assert`, `record`, `sealed`, `permits`, `non-sealed` |
+| **Data types** | `byte` `short` `int` `long` `float` `double` `char` `boolean` |
+| **Flow control** | `if` `else` `switch` `case` `default` `for` `while` `do` `break` `continue` `return` |
+| **Access modifiers** | `public` `private` `protected` |
+| **Other modifiers** | `static` `final` `abstract` `synchronized` `native` `strictfp` `transient` `volatile` |
+| **Class related** | `class` `interface` `extends` `implements` `package` `import` `new` `instanceof` `super` `this` |
+| **Exception handling** | `try` `catch` `finally` `throw` `throws` |
+| **Return type** | `void` |
+| **Enum** | `enum` |
+| **Reserved literals** | `true` `false` `null` |
+| **Unused** | `goto` `const` |
 
-## 7. Visualization
+## 🧪 4. Simple Example
 
+```java
+public class KeywordDemo {
+    public static void main(String[] args) {
+        final int LIMIT = 100;   // final, int are keywords
+        boolean active = true;   // true is a reserved literal
+        System.out.println(LIMIT + " " + active);
+    }
+}
 ```
-Reserved Words
-├── True Keywords (always reserved, e.g. class, if, static)
-└── Contextual Keywords (reserved only in specific positions, e.g. var, yield, record, sealed, permits)
-```
 
-## 8. Important Rules
+## 📌 5. Important Rules
 
-- `true`, `false`, and `null` are technically *literals*, not keywords, but are also reserved and cannot be used as identifiers.
-- `goto` and `const` are reserved but unused (reserved to avoid confusion with C/C++).
+- All reserved words are written in **lowercase**.
+- `goto` and `const` are reserved but have no function in Java.
+- Reserved words can never be used as identifiers.
 
-## 9. Common Mistakes
+## ⚠️ 6. Common Mistakes
 
-- Treating `var`, `yield`, `record`, `sealed`, `permits` as regular keywords — they are **contextual keywords**, valid as identifiers outside their specific syntactic context.
+- Naming a variable `class`, `new` or `for`.
+- Writing `True` or `NULL` — Java uses `true`, `false` and `null` in lowercase.
 
-## 10. Best Practices
+## 🔁 7. Quick Revision
 
-- Avoid using contextual keywords as identifiers even where legal, for clarity.
+> **53 reserved = 50 keywords + 3 literals**, all lowercase, none usable as names.
 
-## 11. Interview Points
+---
 
-- Distinguish true keywords (always reserved) from contextual keywords (`var` since Java 10, `yield`/`record`/`sealed`/`permits` from later versions) — important for Java 21 interviews.
+<div align="center">
 
-## 12. Quick Revision
+<a href="03-Identifiers-and-Rules.md">⬅️ Identifiers and Rules</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="05-Java-Coding-Standards.md">Java Coding Standards ➡️</a>
 
-Keywords are grouped by purpose: types, control flow, modifiers, class/object, exceptions, packages. Java 21 adds contextual keywords like `record`, `sealed`, `permits`, `yield`.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
+
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
+
+</div>

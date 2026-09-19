@@ -1,76 +1,88 @@
-# Java Coding Standards
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Java%20Coding%20Standards&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-Conventional rules for naming and formatting Java code consistently.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=Java%20naming%20conventions%3BPascalCase%20%E2%80%A2%20camelCase%3BNot%20mandatory%2C%20but%20expected" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Consistent style makes code easier to read, review, and maintain across teams and over time.
+</div>
 
-## 3. Basic Syntax
+---
+
+> **In one line:** Naming conventions for classes, interfaces, variables, methods, constants and packages.
+
+## 🧠 1. What Is It?
+
+Java follows fixed naming standards for its own predefined packages, classes and methods, and recommends that every Java developer follow the same conventions. Following them is **not mandatory but highly recommended**.
+
+## 🧩 2. Convention Map
+
+```mermaid
+flowchart TD
+    C["📐 Java Naming Conventions"]
+    C --> A["Class / Interface<br/><b>PascalCase</b><br/>StudentDetails"]
+    C --> B["Variable / Method<br/><b>camelCase</b><br/>mobileNumber, getName()"]
+    C --> D["Constant<br/><b>UPPER_SNAKE</b><br/>MAX_LIMIT"]
+    C --> E["Package<br/><b>lowercase.dots</b><br/>com.kundan.app"]
+    style C fill:#203a43,color:#fff
+    style A fill:#e3f2fd
+    style B fill:#e8f5e9
+    style D fill:#fff3e0
+    style E fill:#f3e5f5
+```
+
+## 📋 3. Convention Table
+
+| Element | Rule | Example |
+|---|---|---|
+| **Class** | Any number of words, no spaces; first letter of every word in uppercase | `EmployeeDetails` |
+| **Interface** | Same rules as a class | `Printable` |
+| **Variable** | Start with lowercase; from the second word onwards capitalise the first letter | `mobileNumber` |
+| **Method** | Same as a variable, but written with parentheses | `calculateSalary()` |
+| **Constant** | All characters uppercase; separate multiple words with `_` | `MAX_USER_COUNT` |
+| **Package** | Lowercase only; separate words with a dot | `com.kundan.service` |
+
+> 📎 **Note:** Variables and methods share the same convention. The difference is that methods carry `( )`.
+
+## 🧪 4. Simple Example
 
 ```java
-package com.example.project;
+package com.kundan.demo;
 
-public class StudentRecord {          // PascalCase
-    private static final int MAX_SIZE = 100; // UPPER_SNAKE_CASE
-    private int studentCount;           // camelCase
+public class EmployeeDetails {
+    static final int MAX_LIMIT = 100;   // constant
+    String employeeName;                // variable
 
-    public void calculateAverage() {}   // camelCase
+    void printEmployeeName() {          // method
+        System.out.println(employeeName);
+    }
 }
 ```
 
-## 4. Simple Example
+## ⚠️ 5. Common Mistakes
 
-Class `BankAccount`, method `getBalance()`, variable `accountHolderName`, constant `MAX_LIMIT`, package `com.bank.accounts`.
+- Writing class names in lowercase, such as `employee`.
+- Using underscores inside normal variable names instead of camelCase.
+- Using uppercase letters in package names.
 
-## 5. How It Works
+## ✅ 6. Best Practices
 
-These are conventions, not compiler-enforced rules (except reserved words) — but violating them creates code that is technically valid yet hard to read.
+- Use nouns for classes, verbs for methods.
+- Pick descriptive names: `totalAmount` beats `ta`.
 
-## 6. Internal Working
+## 🔁 7. Quick Revision
 
-| Element | Convention | Example |
-|---|---|---|
-| Class/Interface | PascalCase | `StudentRecord` |
-| Method | camelCase, verb-based | `calculateTotal()` |
-| Variable | camelCase | `totalAmount` |
-| Constant (`static final`) | UPPER_SNAKE_CASE | `MAX_LIMIT` |
-| Package | all lowercase, dot-separated | `com.company.module` |
+> Class ➜ `PascalCase` • variable/method ➜ `camelCase` • constant ➜ `UPPER_SNAKE_CASE` • package ➜ `all.lowercase`.
 
-## 7. Visualization
+---
 
-```
-Naming Pyramid
-Package:   com.company.module   (all lowercase)
-Class:     StudentRecord         (PascalCase)
-Method:    calculateAverage()    (camelCase)
-Variable:  studentCount          (camelCase)
-Constant:  MAX_LIMIT              (UPPER_SNAKE_CASE)
-```
+<div align="center">
 
-## 8. Important Rules
+<a href="04-Reserved-Words.md">⬅️ Reserved Words</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="06-Java-Comments.md">Java Comments ➡️</a>
 
-- Braces open on the same line as the declaration (Java convention).
-- Indentation: typically 4 spaces, consistent throughout the file.
-- One top-level public class per file, matching the filename.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
 
-## 9. Common Mistakes
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
 
-- Mixing naming styles within the same project.
-- Overly short, meaningless names (`x`, `tmp`, `d1`) outside of trivial loop counters.
-
-## 10. Best Practices
-
-- Keep line lengths reasonable (~100–120 chars).
-- Name booleans as questions: `isValid`, `hasPermission`.
-- One responsibility per class/method.
-
-## 11. Interview Points
-
-- Be able to state each naming convention immediately (class, method, variable, constant, package).
-
-## 12. Quick Revision
-
-PascalCase for classes, camelCase for methods/variables, UPPER_SNAKE_CASE for constants, all-lowercase dotted names for packages.
+</div>

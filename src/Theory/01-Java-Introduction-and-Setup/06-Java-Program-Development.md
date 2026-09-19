@@ -1,67 +1,78 @@
-# Java Program Development
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Java%20Program%20Development&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-The end-to-end lifecycle of building a Java application: writing, compiling, testing, debugging, and running.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=Your%20first%20Java%20program%3BEditor%20%E2%9E%9C%20javac%20%E2%9E%9C%20java%3BSix%20steps%20to%20output" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-A repeatable development cycle avoids wasted effort and catches errors early.
+</div>
 
-## 3. Basic Syntax
+---
+
+> **In one line:** The six practical steps from opening an editor to seeing your first output.
+
+## 🧠 1. What Is It?
+
+The hands-on routine for building and running a program without any IDE.
+
+## 🧩 2. Development Flow
+
+```mermaid
+flowchart TD
+    S1["1️⃣ Open a text editor<br/>Notepad / Notepad++ / EditPlus"] --> S2["2️⃣ Write the program"]
+    S2 --> S3["3️⃣ Save as <b>Welcome.java</b>"]
+    S3 --> S4["4️⃣ Open command prompt<br/>cd to that folder"]
+    S4 --> S5["5️⃣ Compile<br/><code>javac Welcome.java</code>"]
+    S5 -->|.class created| S6["6️⃣ Run<br/><code>java Welcome</code>"]
+    S5 -->|errors| S2
+    S6 --> OUT["✅ Welcome To Kundan Notes"]
+    style OUT fill:#c8e6c9
+```
+
+## 🧪 3. Simple Example
+
+```java
+public class Welcome {
+    public static void main(String[] args) {
+        System.out.println("Welcome To Kundan Notes");
+    }
+}
+```
 
 ```bash
-# 1. Write     -> Program.java
-# 2. Compile   -> javac Program.java
-# 3. Run       -> java Program
-# 4. Debug/Fix -> repeat
+javac Welcome.java
+java Welcome
 ```
 
-## 4. Simple Example
+## 📌 4. Important Rules
 
-Edit `Calculator.java` -> compile -> run -> notice wrong output -> fix logic -> recompile -> rerun.
+- File name **must** be `Welcome.java` because `Welcome` is public.
+- Compile with the extension, run without it.
+- Seeing `Welcome.class` in the folder is proof that compilation succeeded.
 
-## 5. How It Works
+## ⚠️ 5. Common Mistakes
 
-Development is an iterative loop: Edit -> Compile -> Run -> Test -> Debug -> Edit again, until the program behaves correctly.
+- Saving the file as `Welcome.java.txt` from Notepad.
+- Running `java` from a different directory than the `.class` file.
 
-## 6. Internal Working
+## ✅ 6. Best Practices
 
-Modern IDEs automate compile-run-debug cycles, but the underlying steps (`javac`, `java`) are the same tools used from the command line.
+- Learn the command line version first, then move to an IDE.
+- In real projects an IDE (Eclipse, IntelliJ IDEA, VS Code) handles these steps for you.
 
-## 7. Visualization
+## 🔁 7. Quick Revision
 
-```
-Write Code -> Compile -> Fix Compile Errors? --Yes--> Write Code
-     |
-     No
-     v
-   Run -> Correct Output? --No--> Debug -> Write Code
-     |
-    Yes
-     v
-   Done
-```
+> Write ➜ save as `ClassName.java` ➜ `javac ClassName.java` ➜ `java ClassName`.
 
-## 8. Important Rules
+---
 
-- Always resolve compile-time errors before evaluating runtime behavior.
-- Test with multiple inputs, not just the "happy path".
+<div align="center">
 
-## 9. Common Mistakes
+<a href="05-Java-Programming-Elements.md">⬅️ Java Programming Elements</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="07-Compilation.md">Compilation ➡️</a>
 
-- Skipping small, incremental testing and writing large amounts of code before ever compiling.
-- Ignoring compiler warnings.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
 
-## 10. Best Practices
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
 
-- Compile and run frequently in small increments.
-- Use version control (e.g. Git) even for learning projects.
-
-## 11. Interview Points
-
-- Describe the software development cycle (edit-compile-run-debug) and where unit testing fits in professional workflows.
-
-## 12. Quick Revision
-
-Development = Write -> Compile -> Run -> Test -> Debug, repeated until correct.
+</div>

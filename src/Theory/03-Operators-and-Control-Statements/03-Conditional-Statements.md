@@ -1,80 +1,175 @@
-# Conditional Statements
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Conditional%20Statements&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-Statements that execute different code blocks depending on whether a condition is true or false.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=if%20%E2%80%A2%20if-else%20%E2%80%A2%20nested%20if%3Bif-else-if%20ladder%3Bswitch%20case" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Programs must make decisions — conditionals implement that decision-making.
+</div>
 
-## 3. Basic Syntax
+---
+
+> **In one line:** if, if-else, nested if, if-else-if and switch pick which block of code runs.
+
+## 🧠 1. What Is It?
+
+Conditional statements execute a group of statements **based on a condition**. They evaluate a **boolean expression** to make the decision.
+
+## 🧩 2. Decision Flow
+
+```mermaid
+flowchart TD
+    ST["Start"] --> C{"condition"}
+    C -->|true| T["✅ true block"]
+    C -->|false| F["❌ false block / skip"]
+    T --> E["Continue"]
+    F --> E
+    style T fill:#c8e6c9
+    style F fill:#ffcdd2
+```
+
+## 1️⃣ 3. Simple if
+
+If the condition is **true** the block runs; if it is **false** the block is ignored.
 
 ```java
-if (condition) { }
-else if (condition) { }
-else { }
-
-switch (value) {
-    case A -> { }
-    default -> { }
+if (condition) {
+    // statements
 }
 ```
 
-## 4. Simple Example
+```java
+int age = 20;
+if (age >= 18) {
+    System.out.println("Eligible to vote");
+}
+```
+
+## 2️⃣ 4. if-else
+
+Picks one block out of two.
+
+```mermaid
+flowchart LR
+    C{"age >= 18 ?"} -->|true| A["print Eligible"]
+    C -->|false| B["print Not Eligible"]
+    style A fill:#c8e6c9
+    style B fill:#ffcdd2
+```
 
 ```java
-int marks = 75;
-if (marks >= 90) {
-    System.out.println("Grade A");
-} else if (marks >= 75) {
-    System.out.println("Grade B");
+int age = 15;
+if (age >= 18) {
+    System.out.println("Eligible");
 } else {
-    System.out.println("Grade C");
+    System.out.println("Not Eligible");
 }
 ```
 
-## 5. How It Works
+## 3️⃣ 5. Nested if
 
-The condition (a `boolean` expression) is evaluated; if `true`, the associated block runs and the rest are skipped; if `false`, evaluation continues to the next `else if`/`else`.
+Writing an `if` inside another `if`.
 
-## 6. Internal Working
-
-At the bytecode level, `if` compiles to a conditional branch instruction that jumps past the block when the condition is false. `switch` on `int`/`enum`/`String` compiles to efficient jump tables or lookup switches for performance.
-
-## 7. Visualization
-
-```
-        Condition?
-        /       \
-     Yes          No
-      |            |
-   Code Block   Else Block
-        \        /
-          Continue
+```java
+int age = 25;
+double salary = 150000;
+if (age < 30) {
+    if (salary > 100000) {
+        System.out.println("Eligible");
+    }
+}
 ```
 
-## 8. Important Rules
+## 4️⃣ 6. if-else-if Ladder
 
-- Only one branch of an `if-else-if` chain executes.
-- Traditional `switch` statements fall through to the next case unless `break` is used; `switch` **expressions** with `->` do not fall through.
-- `yield` returns a value from a `switch` expression block.
+Used when a value must be compared with **more than two** conditions. Conditions are checked **top to bottom**; the first match runs, and if nothing matches the final `else` runs.
 
-## 9. Common Mistakes
+```mermaid
+flowchart TD
+    C1{"marks >= 75"} -->|true| D1["Distinction"]
+    C1 -->|false| C2{"marks >= 60"}
+    C2 -->|true| D2["First Class"]
+    C2 -->|false| C3{"marks >= 35"}
+    C3 -->|true| D3["Pass"]
+    C3 -->|false| D4["Fail"]
+    style D1 fill:#c8e6c9
+    style D4 fill:#ffcdd2
+```
 
-- Forgetting `break` in a traditional `switch`, causing unintended fall-through.
-- Using `=` instead of `==` in a condition (a compile error in Java for non-boolean types, but still a common typo to watch for).
+```java
+int marks = 62;
+if (marks >= 75) {
+    System.out.println("Distinction");
+} else if (marks >= 60) {
+    System.out.println("First Class");
+} else if (marks >= 35) {
+    System.out.println("Pass");
+} else {
+    System.out.println("Fail");
+}
+```
 
-## 10. Best Practices
+## 5️⃣ 7. switch Statement
 
-- Prefer `switch` expressions (`->`) over traditional `switch` statements when selecting a value, since Java 21 supports them and they are exhaustive-checked and fall-through-free.
-- Keep conditions simple; extract complex boolean logic into a well-named boolean variable or method.
+`switch` compares a value and executes one matching case block. It behaves like an `if-else-if` ladder.
 
-## 11. Interview Points
+Points to remember:
 
-- Explain Java 21 modern switch: arrow labels (`->`), `yield`, exhaustiveness with `sealed` types/enums, and pattern matching in `switch` (preview/finalized features across recent versions).
-- **Common Misconception:** "switch expressions fall through like switch statements" — false; arrow-style cases do not fall through.
+- There can be one or **N** cases.
+- Case values must be **unique**.
+- A case value must be of the **same type** as the switch expression.
+- `break` in each case is **optional**, but without it execution falls through to the next case.
 
-## 12. Quick Revision
+```mermaid
+flowchart TD
+    S["switch (day)"] --> C1{"case 1"}
+    C1 -->|match| B1["Monday ➜ break"]
+    C1 -->|no| C2{"case 2"}
+    C2 -->|match| B2["Tuesday ➜ break"]
+    C2 -->|no| D["default"]
+    B1 --> X["Exit switch"]
+    B2 --> X
+    D --> X
+```
 
-if/else-if/else = sequential boolean checks. switch = multi-way branch on a single value; modern arrow syntax avoids fall-through and can `yield` a value directly.
+```java
+int day = 2;
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    default:
+        System.out.println("Other day");
+}
+```
+
+## ⚠️ 8. Common Mistakes
+
+- Using `=` instead of `==` inside the condition.
+- Forgetting `break`, which causes unintended fall-through.
+- Placing a semicolon right after `if (condition);` so the block always runs.
+
+## ✅ 9. Best Practices
+
+- Always use braces `{ }`, even for a single statement.
+- Prefer `switch` over a long ladder when comparing one variable against fixed values.
+
+## 🔁 10. Quick Revision
+
+> `if` ➜ one path • `if-else` ➜ two paths • ladder ➜ many paths • `switch` ➜ many fixed values.
+
+---
+
+<div align="center">
+
+<a href="02-Control-Statements.md">⬅️ Control Statements</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="04-Looping-Statements.md">Looping Statements ➡️</a>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
+
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
+
+</div>

@@ -1,86 +1,109 @@
-# Reading Data From Keyboard
+<div align="center">
 
-## 1. What Is It?
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=150&section=header&text=Reading%20Data%20From%20Keyboard&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-Techniques for accepting user input at runtime, most commonly using `java.util.Scanner`.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=520&lines=Scanner%20and%20BufferedReader%3BReading%20input%20at%20runtime%3BWatch%20the%20leftover%20newline" />
 
-## 2. Why Do We Need It?
+![Java](https://img.shields.io/badge/Java-Core-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Interactive programs need to read values the user types rather than relying only on hard-coded data.
+</div>
 
-## 3. Basic Syntax
+---
+
+> **In one line:** Scanner and BufferedReader let a program accept input at runtime.
+
+## 🧠 1. What Is It?
+
+We can pass input to a Java program so the logic runs on values typed by the user instead of hard-coded data.
+
+Examples: read two numbers and print their sum, or read a first name and last name and print the full name.
+
+Java gives two classes for keyboard input:
+
+1. `java.util.Scanner`
+2. `java.io.BufferedReader`
+
+## 🧩 2. Input Flow
+
+```mermaid
+flowchart TD
+    K["⌨️ Keyboard"] --> SI["System.in<br/><i>InputStream</i>"]
+    SI --> SC["Scanner<br/><i>buffers and tokenizes</i>"]
+    SC --> M["nextInt() / nextDouble()<br/>next() / nextLine()"]
+    M --> V["📦 Java variable"]
+    style K fill:#e3f2fd
+    style SC fill:#fff3e0
+    style V fill:#c8e6c9
+```
+
+## 🧾 3. Syntax
 
 ```java
 import java.util.Scanner;
 
 Scanner sc = new Scanner(System.in);
-int x = sc.nextInt();
+int number = sc.nextInt();
 String line = sc.nextLine();
 sc.close();
 ```
 
-## 4. Simple Example
+## 🧪 4. Simple Example — Sum Of Two Numbers
 
 ```java
-Scanner sc = new Scanner(System.in);
-System.out.print("Enter age: ");
-int age = sc.nextInt();
-System.out.println("You are " + age);
+import java.util.Scanner;
+
+public class SumDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+        System.out.println("Sum = " + (a + b));
+        sc.close();
+    }
+}
 ```
 
-## 5. How It Works
+## 📋 5. Scanner Methods
 
-`Scanner` wraps an `InputStream` (`System.in`), reads raw bytes, and tokenizes them according to a delimiter (whitespace by default) so you can request typed values like `nextInt()` or `nextDouble()`.
-
-## 6. Internal Working
-
-```
-Keyboard
-   |
-   v
-System.in (InputStream)
-   |
-   v
-Scanner (buffers + tokenizes input)
-   |
-   v
-nextInt() / nextDouble() / next() / nextLine()
-   |
-   v
-Java variable
-```
-
-## 7. Visualization
-
-| Method | Reads | Notes |
+| Method | Reads | Note |
 |---|---|---|
-| `nextInt()` | int | Stops at whitespace |
-| `nextLong()` | long | Stops at whitespace |
-| `nextDouble()` | double | Stops at whitespace |
-| `nextFloat()` | float | Stops at whitespace |
-| `nextBoolean()` | boolean | `true`/`false` text |
-| `next()` | single token (String) | Stops at whitespace |
-| `nextLine()` | entire line (String) | Reads until newline |
+| `nextInt()` | int | stops at whitespace |
+| `nextLong()` | long | stops at whitespace |
+| `nextFloat()` | float | stops at whitespace |
+| `nextDouble()` | double | stops at whitespace |
+| `nextBoolean()` | boolean | accepts `true` / `false` |
+| `next()` | one word | stops at whitespace |
+| `nextLine()` | whole line | reads up to the newline |
 
-## 8. Important Rules
+## 📌 6. Important Rules
 
-- `nextInt()`/`nextDouble()`/etc. do NOT consume the trailing newline character.
-- Mixing `nextInt()` followed by `nextLine()` is the classic pitfall (see Common Mistakes).
-- Always close the `Scanner` when done (or let the program exit) to release resources.
+- `nextInt()`, `nextDouble()` and friends do **not** consume the trailing newline.
+- Close the `Scanner` when the work is done.
 
-## 9. Common Mistakes
+## ⚠️ 7. Common Mistakes
 
-- Calling `nextInt()` then `nextLine()` immediately after — the leftover `\n` from the numeric input is consumed by `nextLine()`, producing an empty string instead of the next line of real input. Fix: add an extra `sc.nextLine();` to consume the leftover newline, or use `sc.nextLine().trim()` consistently.
+- Calling `nextInt()` and then `nextLine()`: the leftover newline is eaten by `nextLine()`, which returns an empty String.
+  **Fix:** add one extra `sc.nextLine();` after the numeric read.
 
-## 10. Best Practices
+## ✅ 8. Best Practices
 
-- Prefer reading everything with `nextLine()` and parsing manually (`Integer.parseInt(...)`) for more predictable behavior.
-- Validate input (e.g. `hasNextInt()`) before consuming it in real applications.
+- For predictable behaviour, read everything with `nextLine()` and convert with `Integer.parseInt(...)`.
+- Validate with `hasNextInt()` before consuming input in real applications.
 
-## 11. Interview Points
+## 🔁 9. Quick Revision
 
-- **Common Misconception:** "`nextInt()` consumes the newline" — false, which is exactly why the `nextInt()`/`nextLine()` combo is a classic bug source.
+> `new Scanner(System.in)` ➜ `nextInt()` / `nextLine()`. The leftover newline is the classic trap.
 
-## 12. Quick Revision
+---
 
-`Scanner(System.in)` -> `nextInt()/nextDouble()/next()/nextLine()`. Watch out for leftover newline after numeric reads.
+<div align="center">
+
+<a href="06-Java-Comments.md">⬅️ Java Comments</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="../03-Operators-and-Control-Statements/README.md">Operators and Control Statements ➡️</a>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
+
+<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
+
+</div>
