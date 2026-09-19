@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=140&section=header&text=10%20-%20File%20Handling&fontSize=32&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:16324f,50:1f4f70,100:33709c&height=140&section=header&text=10%20-%20File%20Handling&fontSize=32&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=580&lines=File%20Handling%20Introduction%3BStreams%3BFile%20Class" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=58A6FF&center=true&vCenter=true&width=580&lines=File%20Handling%20Introduction%3BStreams%3BFile%20Class" />
 
-![Chapter](https://img.shields.io/badge/Chapter-10-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Topics](https://img.shields.io/badge/Topics-5-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
+![Chapter](https://img.shields.io/badge/Chapter-10-C9762A?style=for-the-badge&labelColor=16324f) ![Topics](https://img.shields.io/badge/Topics-5-2E7D5B?style=for-the-badge&labelColor=16324f) ![Author](https://img.shields.io/badge/Author-Kundan-22506F?style=for-the-badge&labelColor=16324f)
 
 </div>
 
@@ -12,7 +12,7 @@
 
 > Reading, writing and storing data outside the program: streams, the File class, readers and writers, and object serialization.
 
-## 📚 Topics In This Chapter
+## Topics In This Chapter
 
 | # | Topic | What you will learn |
 |---|---|---|
@@ -22,7 +22,7 @@
 | 04 | [FileReader and FileWriter](./04-FileReader-and-FileWriter.md) | Reading and writing text with character streams |
 | 05 | [Serialization and De-Serialization](./05-Serialization-and-Deserialization.md) | Saving and restoring objects with ObjectOutputStream and ObjectInputStream |
 
-## 🗺️ Learning Path
+## Learning Path
 
 ```mermaid
 flowchart LR
@@ -41,10 +41,10 @@ flowchart LR
 
 <div align="center">
 
-<a href="../09-Multi-Threading/README.md">⬅️ Inter Thread Communication</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="../11-Advanced-Concepts/README.md">Advanced Concepts ➡️</a>
+<a href="../09-Multi-Threading/README.md">← Inter Thread Communication</a> &nbsp;•&nbsp; <a href="../README.md">Home</a> &nbsp;•&nbsp; <a href="../11-Advanced-Concepts/README.md">Advanced Concepts →</a>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:33709c,100:16324f&height=90&section=footer" width="100%" />
 
-<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
+<sub>Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
 
 </div>

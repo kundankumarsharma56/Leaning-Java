@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=140&section=header&text=02%20-%20Data%20Types%20%26%20Variables&fontSize=32&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:16324f,50:1f4f70,100:33709c&height=140&section=header&text=02%20-%20Data%20Types%20%26%20Variables&fontSize=32&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=560&lines=Variables%3BData%20Types%3BIdentifiers%20and%20Rules" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=58A6FF&center=true&vCenter=true&width=560&lines=Variables%3BData%20Types%3BIdentifiers%20and%20Rules" />
 
-![Chapter](https://img.shields.io/badge/Chapter-02-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Topics](https://img.shields.io/badge/Topics-7-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
+![Chapter](https://img.shields.io/badge/Chapter-02-C9762A?style=for-the-badge&labelColor=16324f) ![Topics](https://img.shields.io/badge/Topics-7-2E7D5B?style=for-the-badge&labelColor=16324f) ![Author](https://img.shields.io/badge/Author-Kundan-22506F?style=for-the-badge&labelColor=16324f)
 
 </div>
 
@@ -12,7 +12,7 @@
 
 > How Java stores data: variables, the eight primitive types, naming rules, conventions, comments and keyboard input.
 
-## 📚 Topics In This Chapter
+## Topics In This Chapter
 
 | # | Topic | What you will learn |
 |---|---|---|
@@ -24,7 +24,7 @@
 | 06 | [Java Comments](./06-Java-Comments.md) | Single line, multi line and documentation comments |
 | 07 | [Reading Data From Keyboard](./07-Reading-Data-From-Keyboard.md) | Scanner and BufferedReader input |
 
-## 🗺️ Learning Path
+## Learning Path
 
 ```mermaid
 flowchart LR
@@ -47,10 +47,10 @@ flowchart LR
 
 <div align="center">
 
-<a href="../01-Java-Introduction-and-Setup/README.md">⬅️ Java Introduction & Setup</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="../03-Operators-and-Control-Statements/README.md">Operators & Control Statements ➡️</a>
+<a href="../01-Java-Introduction-and-Setup/README.md">← Java Introduction & Setup</a> &nbsp;•&nbsp; <a href="../README.md">Home</a> &nbsp;•&nbsp; <a href="../03-Operators-and-Control-Statements/README.md">Operators & Control Statements →</a>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:33709c,100:16324f&height=90&section=footer" width="100%" />
 
-<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
+<sub>Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
 
 </div>

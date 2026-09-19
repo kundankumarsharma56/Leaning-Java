@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=140&section=header&text=06%20-%20OOPS%20%28Part%202%29&fontSize=32&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:16324f,50:1f4f70,100:33709c&height=140&section=header&text=06%20-%20OOPS%20%28Part%202%29&fontSize=32&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=580&lines=Access%20Modifiers%3BEncapsulation%3BInheritance" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=58A6FF&center=true&vCenter=true&width=580&lines=Access%20Modifiers%3BEncapsulation%3BInheritance" />
 
-![Chapter](https://img.shields.io/badge/Chapter-06-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Topics](https://img.shields.io/badge/Topics-8-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
+![Chapter](https://img.shields.io/badge/Chapter-06-C9762A?style=for-the-badge&labelColor=16324f) ![Topics](https://img.shields.io/badge/Topics-8-2E7D5B?style=for-the-badge&labelColor=16324f) ![Author](https://img.shields.io/badge/Author-Kundan-22506F?style=for-the-badge&labelColor=16324f)
 
 </div>
 
@@ -12,7 +12,7 @@
 
 > The four pillars in depth — access control, encapsulation, inheritance, polymorphism and abstraction — plus interfaces, abstract classes and the Object class.
 
-## 📚 Topics In This Chapter
+## Topics In This Chapter
 
 | # | Topic | What you will learn |
 |---|---|---|
@@ -25,7 +25,7 @@
 | 07 | [Abstract Classes](./07-Abstract-Classes.md) | Partial abstraction and when to prefer it over an interface |
 | 08 | [Object Class](./08-Object-Class.md) | The universal parent class and its eleven methods |
 
-## 🗺️ Learning Path
+## Learning Path
 
 ```mermaid
 flowchart LR
@@ -50,10 +50,10 @@ flowchart LR
 
 <div align="center">
 
-<a href="../05-OOPS-Part-1/README.md">⬅️ Constructor</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="../07-Packages-Wrapper-Exceptions/README.md">Packages, Wrappers & Exceptions ➡️</a>
+<a href="../05-OOPS-Part-1/README.md">← Constructor</a> &nbsp;•&nbsp; <a href="../README.md">Home</a> &nbsp;•&nbsp; <a href="../07-Packages-Wrapper-Exceptions/README.md">Packages, Wrappers & Exceptions →</a>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:33709c,100:16324f&height=90&section=footer" width="100%" />
 
-<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
+<sub>Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
 
 </div>

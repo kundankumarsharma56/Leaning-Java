@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=140&section=header&text=09%20-%20Multi-Threading&fontSize=32&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:16324f,50:1f4f70,100:33709c&height=140&section=header&text=09%20-%20Multi-Threading&fontSize=32&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=00E5FF&center=true&vCenter=true&width=580&lines=Multitasking%3BThread%20Creation%3BThread%20Life%20Cycle" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=900&color=58A6FF&center=true&vCenter=true&width=580&lines=Multitasking%3BThread%20Creation%3BThread%20Life%20Cycle" />
 
-![Chapter](https://img.shields.io/badge/Chapter-09-orange?style=for-the-badge&logo=openjdk&logoColor=white) ![Topics](https://img.shields.io/badge/Topics-5-brightgreen?style=for-the-badge&logo=openjdk&logoColor=white) ![Author](https://img.shields.io/badge/Author-Kundan-blue?style=for-the-badge&logo=openjdk&logoColor=white)
+![Chapter](https://img.shields.io/badge/Chapter-09-C9762A?style=for-the-badge&labelColor=16324f) ![Topics](https://img.shields.io/badge/Topics-5-2E7D5B?style=for-the-badge&labelColor=16324f) ![Author](https://img.shields.io/badge/Author-Kundan-22506F?style=for-the-badge&labelColor=16324f)
 
 </div>
 
@@ -12,7 +12,7 @@
 
 > Running several tasks at the same time: multitasking, thread creation, the thread life cycle, synchronization and inter-thread communication.
 
-## 📚 Topics In This Chapter
+## Topics In This Chapter
 
 | # | Topic | What you will learn |
 |---|---|---|
@@ -22,7 +22,7 @@
 | 04 | [Synchronization](./04-Synchronization.md) | Preventing data inconsistency with locks, and avoiding deadlock |
 | 05 | [Inter Thread Communication](./05-Inter-Thread-Communication.md) | How threads cooperate using wait, notify and notifyAll |
 
-## 🗺️ Learning Path
+## Learning Path
 
 ```mermaid
 flowchart LR
@@ -41,10 +41,10 @@ flowchart LR
 
 <div align="center">
 
-<a href="../08-Collections-Framework/README.md">⬅️ Cursors and Sorting</a> &nbsp;•&nbsp; <a href="../README.md">🏠 Home</a> &nbsp;•&nbsp; <a href="../10-File-Handling/README.md">File Handling ➡️</a>
+<a href="../08-Collections-Framework/README.md">← Cursors and Sorting</a> &nbsp;•&nbsp; <a href="../README.md">Home</a> &nbsp;•&nbsp; <a href="../10-File-Handling/README.md">File Handling →</a>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,100:0f2027&height=90&section=footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:33709c,100:16324f&height=90&section=footer" width="100%" />
 
-<sub>📘 Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
+<sub>Core Java Theory Notes • Maintained by <b>Kundan</b></sub>
 
 </div>
